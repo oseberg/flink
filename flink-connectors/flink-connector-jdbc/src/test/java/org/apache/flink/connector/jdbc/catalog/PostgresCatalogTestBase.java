@@ -250,6 +250,8 @@ public class PostgresCatalogTestBase {
 //				.field("timestamptz_arr", DataTypes.ARRAY(DataTypes.TIMESTAMP_WITH_LOCAL_TIME_ZONE(4)))
 				.field("date_arr", DataTypes.ARRAY(DataTypes.DATE()))
 				.field("time_arr", DataTypes.ARRAY(DataTypes.TIME(0)))
+				.field("null_bytea_arr", DataTypes.ARRAY(DataTypes.BYTES()))
+				.field("null_text_arr", DataTypes.ARRAY(DataTypes.STRING()))
 				.build(),
 
 			"int_arr integer[], " +
@@ -269,7 +271,9 @@ public class PostgresCatalogTestBase {
 				"timestamp_arr timestamp(5)[], " +
 //				"timestamptz_arr timestamptz(4)[], " +
 				"date_arr date[], " +
-				"time_arr time(0)[]",
+				"time_arr time(0)[], " +
+				"null_bytea_arr bytea[], " +
+				"null_text_arr text[]",
 
 			String.format("'{1,2,3}'," +
 					"'{2,3,4}'," +
@@ -288,7 +292,9 @@ public class PostgresCatalogTestBase {
 					"'{\"2016-06-22 19:10:25\", \"2019-06-22 19:10:25\"}'," +
 //				"'{\"2006-06-22 19:10:25\", \"2009-06-22 19:10:25\"}'," +
 					"'{\"2015-01-01\", \"2020-01-01\"}'," +
-					"'{\"00:51:02.746572\", \"00:59:02.746572\"}'"
+					"'{\"00:51:02.746572\", \"00:59:02.746572\"}'," +
+					"NULL," +
+					"NULL"
 			));
 	}
 
