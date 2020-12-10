@@ -800,7 +800,7 @@ under the License.
 			<dependency>
 				<groupId>org.apache.flink</groupId>
 				<artifactId>flink-test-utils-junit</artifactId>
-				<version>${project.version}</version>
+				<version>1.12.0</version>
 				<scope>test</scope>
 			</dependency>
 
